@@ -12,11 +12,11 @@ userRouter.route('/users/login')
     .post(login);
 
 userRouter.route('/users/me')
-    .get(verifyJWT ,getLoggedUser);
+    .get(getLoggedUser);
 
 userRouter.route('/users/:id')
     .get(verifyJWT ,getOne)
-    .delete(verifyJWT ,remove)
+    .delete(remove)
     .put(verifyJWT ,update);
 
 userRouter.route('/users/verify/:code')
